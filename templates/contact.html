@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<div class="row justify-content-center">
+
+<div class="col-md-8">
+
+<div class="contact-card p-4 shadow-lg">
+
+<div class="text-center mb-4">
+
+<i class="bi bi-chat-dots-fill contact-icon"></i>
+
+<h2 class="fw-bold text-white mt-2">Contact Us</h2>
+
+<p class="text-light">We would love to hear from you</p>
+
+</div>
+
+<form method="POST" action="/contact">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label class="form-label text-white">
+<i class="bi bi-person"></i> Your Name
+</label>
+
+<input type="text" name="name" class="form-control contact-input" placeholder="Enter your name" required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label class="form-label text-white">
+<i class="bi bi-envelope"></i> Email
+</label>
+
+<input type="email" name="email" class="form-control contact-input" placeholder="Enter your email" required>
+
+</div>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label text-white">
+<i class="bi bi-list"></i> Purpose
+</label>
+
+<select name="purpose" class="form-select contact-input" required>
+
+<option value="">Select Purpose</option>
+
+<option>General Inquiry</option>
+
+<option>Job Opportunity</option>
+
+<option>Project Collaboration</option>
+
+<option>Technical Support</option>
+
+<option>Other</option>
+
+</select>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label text-white">
+<i class="bi bi-chat-left-text"></i> Message
+</label>
+
+<textarea name="message" rows="4" class="form-control contact-input" placeholder="Write your message..." required></textarea>
+
+</div>
+
+<div class="text-center mt-3">
+
+<button class="btn btn-contact">
+
+<i class="bi bi-send"></i> Send Message
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
+

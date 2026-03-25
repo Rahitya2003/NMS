@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+
+<div class="col-md-6">
+
+<div class="card shadow">
+
+<div class="card-body text-center">
+
+<h3 class="mb-4">User Profile</h3>
+
+{% if user.profile_image %}
+<img src="{{ url_for('static', filename='profile_images/' + user.profile_image) }}"
+class="rounded-circle mb-3"
+width="120"
+height="120">
+{% else %}
+<img src="{{ url_for('static', filename='profile_images/default.png') }}"
+class="rounded-circle mb-3"
+width="120"
+height="120">
+{% endif %}
+
+<form method="POST" action="{{ url_for('update_profile') }}" enctype="multipart/form-data">
+
+<div class="mb-3">
+
+<label class="form-label">Username</label>
+
+<input type="text"
+name="username"
+class="form-control"
+value="{{ user.username }}">
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">Email</label>
+
+<input type="email"
+name="email"
+class="form-control"
+value="{{ user.email }}">
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">Profile Image</label>
+
+<input type="file"
+name="profile_image"
+class="form-control">
+
+</div>
+
+<button class="btn btn-primary w-100">
+Update Profile
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
+

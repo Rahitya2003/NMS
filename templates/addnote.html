@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Add Note{% endblock %}
+{% block content %}
+<br><br>
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-7">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h4 class="mb-3">Add a New Note</h4>
+        <form method="POST">
+          <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input name="title" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Content</label>
+            <textarea name="content" rows="6" class="form-control" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Note Color</label>
+
+            <select name="color" class="form-select">
+              <option value="white">Default</option>
+              <option value="yellow">Yellow</option>
+              <option value="blue">Blue</option>
+              <option value="green">Green</option>
+              <option value="pink">Pink</option>
+            </select>
+          </div>
+          <button class="btn btn-success" type="submit">Save Note</button>
+          <a class="btn btn-secondary ms-2" href="{{ url_for('viewall') }}">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
